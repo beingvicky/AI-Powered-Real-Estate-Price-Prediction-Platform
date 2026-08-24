@@ -1,0 +1,57 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#07111F"/>
+  <rect x="70" y="60" width="1060" height="680" rx="24" fill="#0F1E2F" stroke="#1C3550"/>
+  <text x="110" y="120" fill="#8EC5FF" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">AI-POWERED REAL ESTATE PLATFORM</text>
+  <text x="110" y="165" fill="#F6F9FF" font-family="Arial, sans-serif" font-size="42" font-weight="700">Property Price Prediction</text>
+  <rect x="110" y="210" width="520" height="380" rx="18" fill="#101F31" stroke="#254565"/>
+  <text x="145" y="260" fill="#E9F2FF" font-family="Arial, sans-serif" font-size="32" font-weight="600">Property Details</text>
+
+  <rect x="145" y="290" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="165" y="323" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Location</text>
+  <text x="165" y="340" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">Mysuru</text>
+
+  <rect x="375" y="290" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="395" y="323" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Area</text>
+  <text x="395" y="340" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">1200 sq.ft</text>
+
+  <rect x="145" y="360" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="165" y="393" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Bedrooms</text>
+  <text x="165" y="410" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">2</text>
+
+  <rect x="375" y="360" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="395" y="393" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Bathrooms</text>
+  <text x="395" y="410" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">2</text>
+
+  <rect x="145" y="430" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="165" y="463" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Property Type</text>
+  <text x="165" y="480" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">Apartment</text>
+
+  <rect x="375" y="430" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="395" y="463" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Floor</text>
+  <text x="395" y="480" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">2</text>
+
+  <rect x="145" y="500" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="165" y="533" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Parking</text>
+  <text x="165" y="550" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">1</text>
+
+  <rect x="375" y="500" width="200" height="52" rx="10" fill="#192B3F"/>
+  <text x="395" y="533" fill="#A9C4E0" font-family="Arial, sans-serif" font-size="18">Age</text>
+  <text x="395" y="550" fill="#F3F8FF" font-family="Arial, sans-serif" font-size="16">5 years</text>
+
+  <rect x="725" y="210" width="325" height="380" rx="18" fill="#111F30" stroke="#214766"/>
+  <text x="760" y="260" fill="#E9F2FF" font-family="Arial, sans-serif" font-size="28" font-weight="600">Estimated Price</text>
+  <text x="760" y="335" fill="#F0F6FF" font-family="Arial, sans-serif" font-size="48" font-weight="700">₹124.49L</text>
+  <text x="760" y="390" fill="#B6D0F2" font-family="Arial, sans-serif" font-size="18">Range: ₹112.04L - ₹136.94L</text>
+  <rect x="760" y="430" width="220" height="52" rx="10" fill="#253D5F"/>
+  <text x="783" y="463" fill="#EAF5FF" font-family="Arial, sans-serif" font-size="16">Model Used: Gradient Boosting</text>
+
+  <rect x="145" y="620" width="200" height="54" rx="12" fill="url(#grad)"/>
+  <text x="185" y="655" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Predict Price</text>
+
+  <defs>
+    <linearGradient id="grad" x1="145" y1="620" x2="345" y2="674" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4DABF7"/>
+      <stop offset="1" stop-color="#7C4DFF"/>
+    </linearGradient>
+  </defs>
+</svg>
