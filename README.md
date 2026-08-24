@@ -155,10 +155,6 @@ This project is designed to showcase:
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Author
-
-Vicky Singh
-
 ## Contact
 
 For questions or collaboration, reach out via GitHub: [@beingvicky](https://github.com/beingvicky)
