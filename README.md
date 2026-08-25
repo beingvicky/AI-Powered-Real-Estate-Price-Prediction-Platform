@@ -3,90 +3,83 @@
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-1.5-FF9900?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=111111)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.5-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-2EA44F?style=for-the-badge)
 
 </div>
 
-An AI-powered real estate valuation platform that predicts property prices using machine learning and provides a user-friendly web interface for homeowners, buyers, and real-estate analysts.
+A full-stack machine learning web application that estimates residential property prices from location, area, property type, bedrooms, bathrooms, floor, parking, and property age. The platform combines a React dashboard with a FastAPI prediction service and trained scikit-learn regression models.
 
-## Overview
+## Preview
 
-This project combines:
-- a React frontend for property input
-- a FastAPI backend for prediction APIs
-- machine learning regression models for valuation
-- a comparison dashboard for model performance metrics
-- market-aware pricing logic for cities like Bengaluru and Mysuru
+### Property Input Form
 
-Users enter property details such as:
-- city/location
-- area in sq.ft
-- bedrooms
-- bathrooms
-- property type
-- floor
-- parking
-- property age
+![Property input form](screenshots/prediction-form.png)
 
-The system estimates the market price in Indian Rupees and returns a price range in lakhs.
+### Prediction Result
 
-## Project Architecture
+![Prediction result](screenshots/prediction-result.png)
 
-- Frontend: React + Vite
-- Backend: FastAPI
-- ML: scikit-learn regression models
-- Model comparison: Linear Regression, Random Forest, Gradient Boosting
-- Data: market-aware real-estate pricing patterns for Indian cities
+## Key Features
 
-## Features
-
-- Real estate price prediction in ₹ lakhs
-- City-based pricing support including Mysuru and Bengaluru
-- Property input form with validation
-- Model performance comparison (R², MAE, RMSE)
-- Estimated price range output
-- Fast API-based backend integration
-- Easy local setup and run instructions
-
-## Screenshots
-
-### Prediction Form
-
-![Prediction Form](screenshots/prediction-form.png)
-
-### Price Result
-
-![Prediction Result](screenshots/prediction-result.png)
+- Predicts property prices in INR lakhs from practical real-estate inputs.
+- Supports multiple Indian city markets including Bengaluru, Mysuru, Hyderabad, Chennai, Pune, Mumbai, and Delhi.
+- Trains and compares Linear Regression, Random Forest, and Gradient Boosting models.
+- Returns an estimated price, confidence-style price range, selected model, and model metrics.
+- Provides a clean React + Vite user interface backed by a FastAPI REST API.
+- Includes reproducible local model training through `backend/train_model.py`.
 
 ## Tech Stack
 
-- React
-- Vite
-- FastAPI
-- Python
-- scikit-learn
-- Pandas
-- NumPy
-- Joblib
-- Pydantic
+| Layer | Tools |
+| --- | --- |
+| Frontend | React 18, Vite 5, CSS |
+| Backend | FastAPI, Uvicorn, Pydantic |
+| Machine Learning | scikit-learn, Pandas, NumPy, Joblib |
+| Language/runtime | Python 3.11, Node.js |
 
-## Model Comparison
+## Project Structure
 
-This project evaluates multiple regression models:
+```text
+.
++-- backend/
+|   +-- app/
+|   |   +-- main.py          # FastAPI routes and prediction logic
+|   |   +-- schemas.py       # Request and response models
+|   +-- requirements.txt
+|   +-- test_market_pricing.py
+|   +-- train_model.py       # Synthetic market dataset + model training
++-- frontend/
+|   +-- src/
+|   |   +-- App.jsx
+|   |   +-- index.css
+|   |   +-- main.jsx
+|   +-- package.json
+|   +-- vite.config.js
++-- screenshots/
++-- README.md
+```
 
-- Linear Regression
-- Random Forest Regressor
-- Gradient Boosting Regressor
+## Model Performance
 
-The app compares model quality using:
-- R² score
-- MAE
-- RMSE
+After training with the included market-aware synthetic dataset, the best model is Gradient Boosting.
+
+| Model | R2 | MAE | RMSE |
+| --- | ---: | ---: | ---: |
+| Linear Regression | 0.8718 | 65.2026 | 88.5758 |
+| Random Forest | 0.9526 | 38.3982 | 53.8786 |
+| Gradient Boosting | 0.9617 | 34.2649 | 48.4187 |
 
 ## Local Setup
+
+### Prerequisites
+
+- Python 3.11+
+- Node.js 18+
+- npm
 
 ### 1. Clone the repository
 
@@ -95,66 +88,102 @@ git clone https://github.com/beingvicky/AI-Powered-Real-Estate-Price-Prediction-
 cd AI-Powered-Real-Estate-Price-Prediction-Platform
 ```
 
-### 2. Backend setup
+### 2. Set up and run the backend
 
 ```bash
 cd backend
-py -3.11 -m venv .venv
+python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
 python train_model.py
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
-### 3. Frontend setup
-
-```bash
-cd ../frontend
-npm install
-npm run dev -- --host 0.0.0.0 --port 4173
-```
-
-Open the app in your browser:
+The API will be available at:
 
 ```text
-http://localhost:4173
+http://127.0.0.1:8000
 ```
 
-## API Endpoint
+### 3. Set up and run the frontend
 
-### Prediction
+Open a second terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev -- --host 127.0.0.1 --port 5173
+```
+
+Open the application:
+
+```text
+http://127.0.0.1:5173
+```
+
+## API Reference
+
+### Health Check
 
 ```http
-POST http://localhost:8000/predict
+GET /health
 ```
 
-Sample JSON body:
+### Model Metadata
+
+```http
+GET /models
+```
+
+### Predict Property Price
+
+```http
+POST /predict
+```
+
+Example request:
 
 ```json
 {
-  "location": "Mysuru",
+  "location": "Bengaluru",
   "area": 1200,
   "bedrooms": 2,
   "bathrooms": 2,
   "property_type": "Apartment",
-  "floor": 2,
+  "floor": 5,
   "parking": 1,
-  "age": 5
+  "age": 8
 }
 ```
 
-## Project Goals
+Example response:
 
-This project is designed to showcase:
-- full-stack application development
-- ML model training and evaluation
-- real-estate pricing estimation
-- AI product thinking for a business use case
+```json
+{
+  "estimated_price_lakhs": 172.99,
+  "price_range_lakhs": {
+    "min_lakhs": 155.69,
+    "max_lakhs": 190.29
+  },
+  "model_used": "Gradient Boosting",
+  "metrics": {
+    "r2": 0.9617,
+    "mae": 34.2649,
+    "rmse": 48.4187
+  }
+}
+```
+
+## Notes
+
+- Model artifacts are generated locally by `python train_model.py` and are intentionally ignored by Git.
+- The pricing dataset is synthetic and market-aware, so predictions are suitable for portfolio/demo use rather than financial decision-making.
+- The frontend expects the backend to run on `http://localhost:8000` or `http://127.0.0.1:8000`.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Contact
+## Author
 
-For questions or collaboration, reach out via GitHub: [@beingvicky](https://github.com/beingvicky)
+Developed by [@beingvicky](https://github.com/beingvicky).

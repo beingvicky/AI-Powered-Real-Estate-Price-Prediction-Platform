@@ -8,3 +8,5 @@ backend/app/*.joblib
 backend/app/model_metadata.json
 .DS_Store
 .env
+*.log
+.idea/

@@ -12,10 +12,9 @@ const initialForm = {
 };
 
 const modelMetrics = [
-  { name: 'Linear Regression', r2: 0.71, mae: 8.2 },
-  { name: 'Random Forest', r2: 0.82, mae: 5.9 },
-  { name: 'Gradient Boosting', r2: 0.84, mae: 5.3 },
-  { name: 'XGBoost', r2: 0.87, mae: 4.8 },
+  { name: 'Linear Regression', r2: 0.8718, mae: 65.2026, rmse: 88.5758 },
+  { name: 'Random Forest', r2: 0.9526, mae: 38.3982, rmse: 53.8786 },
+  { name: 'Gradient Boosting', r2: 0.9617, mae: 34.2649, rmse: 48.4187 },
 ];
 
 function App() {
@@ -26,11 +25,11 @@ function App() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
+    const numericFields = ['area', 'floor', 'parking', 'age', 'bedrooms', 'bathrooms'];
+
     setForm((prev) => ({
       ...prev,
-      [name]: name === 'area' || name === 'floor' || name === 'parking' || name === 'age' || name === 'bedrooms' || name === 'bathrooms'
-        ? Number(value)
-        : value,
+      [name]: numericFields.includes(name) ? Number(value) : value,
     }));
   };
 
@@ -196,6 +195,7 @@ function App() {
                 <th>Model</th>
                 <th>R²</th>
                 <th>MAE</th>
+                <th>RMSE</th>
               </tr>
             </thead>
             <tbody>
@@ -204,6 +204,7 @@ function App() {
                   <td>{model.name}</td>
                   <td>{model.r2}</td>
                   <td>{model.mae}</td>
+                  <td>{model.rmse}</td>
                 </tr>
               ))}
             </tbody>

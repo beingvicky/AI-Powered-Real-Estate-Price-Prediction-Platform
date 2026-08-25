@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class PredictionRequest(BaseModel):
@@ -13,6 +13,8 @@ class PredictionRequest(BaseModel):
 
 
 class PredictionResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
+
     estimated_price_lakhs: float
     price_range_lakhs: dict
     model_used: str
