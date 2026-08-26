@@ -17,6 +17,8 @@ const modelMetrics = [
   { name: 'Gradient Boosting', r2: 0.9617, mae: 34.2649, rmse: 48.4187 },
 ];
 
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+
 function App() {
   const [form, setForm] = useState(initialForm);
   const [result, setResult] = useState(null);
@@ -39,7 +41,7 @@ function App() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:8000/predict', {
+      const response = await fetch(`${API_BASE_URL}/predict`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
