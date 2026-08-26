@@ -99,6 +99,13 @@ python train_model.py
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
+For running backend tests, install the development dependencies:
+
+```bash
+pip install -r requirements-dev.txt
+python -m pytest
+```
+
 The API will be available at:
 
 ```text
@@ -114,6 +121,8 @@ cd frontend
 npm install
 npm run dev -- --host 127.0.0.1 --port 5173
 ```
+
+To point the frontend at a different backend URL, copy `frontend/.env.example` to `frontend/.env` and update `VITE_API_BASE_URL`.
 
 Open the application:
 
